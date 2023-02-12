@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <title>program using an object with the name 'asci',</title>
+    <style>
+      input {
+        padding: 10px;
+        font-size: 20px;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+      }
+      button {
+        margin-top: 70px;
+        padding: 10px 20px;
+        font-size: 20px;
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-align: center;
+      }
+
+      #result {
+        margin-top: 20px;
+        font-size: 30px;
+        border:  solid gray 4px;
+        border-radius: 10px;
+        text-align: center;
+      }
+      #title {
+        margin-bottom: 10%;
+      }
+      span {
+        background-color: #4caf50;
+        border-radius: 4px;
+        text-align: center;
+        margin-left: 10%;
+        margin-top: 10px;
+        color: #0f1310;
+        font-size: xx-large;
+      }
+      label {
+        font-size: large;
+        font-weight: bold;
+      }
+      #number{border: 4px solid lightgreen;}
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <span> Program using an object with the name 'ASCII'</span>
+          <br /><label> write a Number (1-26):</label>
+          <input type="number" id="number" min="1" max="26" />
+          <button onclick="displayChar()">Display Character</button>
+          <div id="result"></div>
+        </div>
+      </div>
+    </div>
+    <script>
+      // Object with the name 'asci'
+      var asci = {
+        // Function 'chr()' with one parameter
+        chr: function (n) {
+          return String.fromCharCode(n + 64);
+        },
+      };
+
+      // Function to display character
+      function displayChar() {
+        var number = document.getElementById("number").value;
+        var char = asci.chr(parseInt(number));
+        document.getElementById("result").innerHTML = "Character: " + char;
+      }
+    </script>
+  </body>
+</html>
